@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Create User</title>     
+    </head>
+
+  <body>
+      <h1>Create User</h1>
+      <hr />
+
+      <form action="create_user.html" method="post" enctype="application/x-www-form-urlencoded">
+         
+        <fieldset>
+
+            <legend>User Form</legend>
+
+            <label for="username">Username:</label>        
+            <input required type="text" size="30" name ="usernamename" id="username" maxlength="12" placeholder="Type your username">
+            <br />
+
+            <label for="Password">Password:</label>
+            <input type="password" size="30" name ="Password" id="Password" maxlength="8" placeholder="Type your Password">
+            <br />
+
+            <label for="date">Birthday:</label>
+            <input id ="date" type="date" name="birthday" />
+            <br />
+
+            Select your favourite superhero:<br />
+            <input type="radio" name="superhero" value="Superman" checked="checked" />Superman<br />
+            <input type="radio" name="superhero" value="Batman" />Batman<br />
+            <input type="radio" name="superhero" value="Wonder Woman"/>Wonder Woman<br />
+            <input type="radio" name="superhero"  value="Flash"/>Flash<br />
+            <input type="radio" name="superhero" value="Thor" />Thor<br />
+            <input type="radio" name="superhero" value="Hulk" />Hulk<br />
+            
+
+            Select your favourite video game
+            <br />
+            <label for="videogames">VideoGames:</label><br />
+            <input type="checkbox" name="videogames[]" value="Fifa" checked />Fifa<br />
+            <input type="checkbox" name="videogames[]" value="Residen Evil" />Residen Evil<br />
+            <input type="checkbox" name="videogames[]" value="Uncharted"  />Uncharted<br />
+
+            <input type="hidden" name="userid" value="2300" />
+
+            <br />
+            <button>
+              <img src="img/register_button.jpg" alt="register" height="30" width="auto"/>
+            </button>
+
+          </fieldset>
+      </form>
+      
+      <iframe
+      src="https://www.w3schools.com"
+      height="200"
+      width="200"
+      seamless
+      frameborder="0"
+    ></iframe>
+
+  </body>
+</html>
