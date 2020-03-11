@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>My First HTML</title>    
+      <meta charset="UTF-8" />
+      <script>
+        let username =  prompt("Enter your username");
+        let password = prompt("Enter your password");
+        alert("Welcome " + username);
+
+        let s = setTimeout(function(){
+            let answer = confirm("Do you still want to be logged?");
+            if(s)
+            {
+                alert(username + " your session has been restored");
+
+            }
+            else
+            {
+                alert(username + " your session has expired");
+            }   
+            }, 2000);
+
+
+      </script>
+ 
+    </head>
+
+  <body>
+    
+  </body>
+</html>

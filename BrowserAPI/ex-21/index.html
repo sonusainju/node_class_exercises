@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Elements</title>
+    <script>
+        window.onload=()=>{
+            let list = document.querySelector("ul");
+            const items = list.children;
+            let item = items[0];
+
+            while(item.nextElementSibling)
+            {
+                item.classList.add("orange");
+                item=item.nextElementSibling;
+
+            }
+            item.classList.add("orange");
+
+
+            while(item.previousElementSibling)
+            {
+                if(item.innerText=="Item 3")
+                {
+                    item.classList.remove("orange");
+
+                    item.classList.add("red");
+                }
+
+                item =item.previousElementSibling;
+            }
+            item.classList.remove("orange");
+            item.classList.add("green");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    <style>
+      .red {
+        color: red;
+      }
+
+      .green {
+        color: green;
+      }
+
+      .orange {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </body>
+</html>
