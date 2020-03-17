@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form elements event</title>
+    <script>
+        window.onload=()=>{
+            const form = document.querySelector("form");
+
+            // Dont send
+            form.addEventListener("submit", (event)=>{
+                event.preventDefault();
+                alert("Not sent");
+            });
+
+            const inputs = form.elements;
+
+            // HAndler for onfocus
+            function onFocusHandler(){
+                console.log("Inside handler");
+                this.style.boxShadow = "7px 7px 6px -2px rgba(0,0,0,0.72)";
+
+            };
+
+            // Handler when focus is removed - onblur
+            function onBlurHandler(){
+                console.log("Inside blur handler");
+                this.style.boxShadow = "None";
+
+            }
+
+            for (let i=0; i<inputs.length; i++)
+            {
+                inputs[i].addEventListener("focus", onFocusHandler);
+                inputs[i].addEventListener("blur", onBlurHandler);
+
+            };
+
+        };
+        </script>
+  </head>
+  <body>
+    <form
+      action="save_user.html"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+      name="login"
+    >
+      <input type="text" id="username" name="username" />
+      <input type="password" id="pass" name="pass" />
+      <input type="submit" name="submit" value="Send" />
+    </form>
+  </body>
+</html>
