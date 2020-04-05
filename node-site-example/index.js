@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 //const superheroes = require('./superheroes.js');
+const MongoClient = require("mongodb").MongoClient;
+const url = "mongodb://localhost:27017";
 
 
 app.use(express.static('public'));
@@ -23,8 +25,8 @@ const superheroes = [
 
 app.get("/", (req, res) => {
   
-  res.render("index", { superheroes: superheroes });
-});
+      res.render("index", { superheroes: superheroes });
+    });
 
 app.get("/superheroes/:id", (req, res) => {
   const selectedId = req.params.id;
@@ -37,6 +39,7 @@ app.get("/superheroes/:id", (req, res) => {
 
   res.render("superhero", { superhero: selectedSuperhero });
 });
+
 
 app.post("/superheroes/", urlencodedParser, (req, res) => {
   const newId = superheroes[superheroes.length - 1].id + 1;
@@ -58,6 +61,3 @@ app.listen(3000, function() {
 
   console.log("Example app listening on port 3000!");
 });
-
-
-
